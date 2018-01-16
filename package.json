@@ -1,0 +1,39 @@
+{
+  "name": "Search-GitHub-by-user-name",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test",
+    "watch": "grunt wait",
+    "sync": "grunt sync",
+    "babel": "grunt babel",
+    "start": "http-server",
+    "build": "babel src/script.js --watch --out-file dest/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rwart/Search-GitHub-by-user-name.git"
+  },
+  "author": "rwart",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/rwart/Search-GitHub-by-user-name/issues"
+  },
+  "homepage": "https://github.com/rwart/Search-GitHub-by-user-name#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.0.20",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-react": "^6.0.0",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^a7.0.0",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "http-server": "^0.10.0"
+  }
+}

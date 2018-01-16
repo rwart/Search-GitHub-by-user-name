@@ -1,0 +1,13 @@
+{
+	"only": [
+			"*.babel",
+			"*.jsx",
+			"*.es6",
+			"*.js"
+		],
+	"presets": [
+		"es2015",
+		"react"
+	],
+	"plugins": ["transform-remove-strict-mode", "transform-class-properties"]
+}

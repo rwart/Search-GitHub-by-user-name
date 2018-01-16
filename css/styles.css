@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  background:#3175b1;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  min-height:100vh;
+}
+
+.app form {
+  background:#20e8e8;
+  text-align:left;
+  margin: 0 0 10px 0;
+  padding: 5px;
+}
+
+.app form label {
+  padding: 5px 10px 5px 0px; 
+}
+
+.app form input {
+  width: 250px;
+}
+
+.users-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.user {
+  width: 150px;
+  padding: 5px;
+  margin: 0 0 10px 0;
+}
+
+.user img {
+  max-width: 100px;
+}
+
+.user a {
+    display: block;
+    padding:1px;
+}
