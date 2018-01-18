@@ -38,7 +38,7 @@ module.exports = function (grunt) {
                 src: ['**/*.jsx', '**/*.es6', '**/*.babel', '**/*.js'],
                 dest: 'dest',
                 ext: '.js',
-              }, ],
+              },],
           },
       },
   });
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-babel');
 
-  // "npm run sync" runs task watch for browserSync
+  // "npm run wait" runs task browserSync and watch
 
   grunt.registerTask('wait', ['browserSync', 'watch']);
 
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['jshint']);
 
   // Default task(s).
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['wait']);
 
   // "grunt.registerTask('babel', ['babel']);" is not allowed => causes infinite loop
 };
