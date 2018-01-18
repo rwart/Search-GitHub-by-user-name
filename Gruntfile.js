@@ -3,44 +3,44 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     jshint: {
-      all: ['Gruntfile.js', 'dest/**/*.js'],
+      all: ['Gruntfile.js'],
     },
     watch: {
       scripts: {
-          files: ['Gruntfile.js', 'dest/**/*.js'],
+          files: ['Gruntfile.js'],
           tasks: ['jshint'],
           options: {
             spawn: false,
           },
         },
     },
-    browserSync: {
+    browserSync: { // path to files can not contain "(" nor ")" !!!
         dev: {
             bsFiles: {
-              src: ['index.html', 'css/**/*.css', 'dest/**/*.js', 'src/**/*.js'],
+              src: ['index.html', 'css/styles.css', 'css/**/*.css', 'dest/**/*.js', 'src/**/*.js'],
             },
             options: {
-              watchTask: false, //true for running together with watch
+              watchTask: true, //true for running together with watch
               server: true, // server: true for baseDir: "./" Default - port: 3000
             },
           },
       },
     babel: {
-      options: {
-        sourceMap: false,
-        presets: ['babel-preset-es2015', 'babel-preset-react'],
-        plugins: ['transform-remove-strict-mode', 'transform-class-properties'],
-      },
-      dist: {
-          files: [{
-              expand: true,
-              cwd: 'src',
-              src: ['**/*.jsx', '**/*.es6', '**/*.babel', '**/*.js'],
-              dest: 'dest',
-              ext: '.js',
-            }, ],
+        options: {
+          sourceMap: false,
+          presets: ['babel-preset-es2015', 'babel-preset-react'],
+          plugins: ['transform-remove-strict-mode', 'transform-class-properties'],
         },
-    },
+        dist: {
+            files: [{
+                expand: true,
+                cwd: 'src',
+                src: ['**/*.jsx', '**/*.es6', '**/*.babel', '**/*.js'],
+                dest: 'dest',
+                ext: '.js',
+              }, ],
+          },
+      },
   });
 
   // Load the plugins tasks
@@ -50,15 +50,15 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-babel');
 
-  // 'npm run watch" runs task watch for jshint and browserSync
-  grunt.registerTask('sync', ['browserSync']);
-  grunt.registerTask('wait', ['watch']);
+  // "npm run sync" runs task watch for browserSync
+
+  grunt.registerTask('wait', ['browserSync', 'watch']);
 
   // "npm test" runs these task(s)
   grunt.registerTask('test', ['jshint']);
 
   // Default task(s).
-  grunt.registerTask('default', ['wait']);
+  grunt.registerTask('default', ['watch']);
 
-  // grunt.registerTask('babel', ['babel']); is not allowed => causes infinite loop
+  // "grunt.registerTask('babel', ['babel']);" is not allowed => causes infinite loop
 };

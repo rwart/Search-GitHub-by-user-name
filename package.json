@@ -5,8 +5,7 @@
   "main": "Gruntfile.js",
   "scripts": {
     "test": "grunt test",
-    "watch": "grunt wait",
-    "sync": "grunt sync",
+    "wait": "grunt wait",
     "babel": "grunt babel",
     "start": "http-server",
     "build": "babel src/script.js --watch --out-file dest/script.js"
@@ -29,7 +28,7 @@
     "babel-preset-es2015": "^6.0.0",
     "babel-preset-react": "^6.0.0",
     "grunt": "^1.0.1",
-    "grunt-babel": "^a7.0.0",
+    "grunt-babel": "^7.0.0",
     "grunt-browser-sync": "^2.2.0",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-jshint": "^1.1.0",
