@@ -2,7 +2,7 @@
   "babelMapsPath":                    "",
   "babelMapsAddUrl":                  false,
   "babelSourcePath":                  "src",
-  "babelTranspilePath":               "dest",
+  "babelTranspilePath":               "dist",
   "createMap":                        false,
   "createTargetDirectories":          true,
   "createTranspiledCode":             true,
